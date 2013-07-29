@@ -1,0 +1,9 @@
+<h1>All Posts</h1>
+
+<% @posts.each do |post| %>
+<div>
+  <h3><%= post.title %></h3>
+  <p><%= post.content %></p>
+  <%= link_to time_ago_in_words(post.created_at) + ' ago', post_path(post) %>
+</div>
+<% end %>
