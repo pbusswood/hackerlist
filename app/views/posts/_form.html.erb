@@ -1,14 +1,14 @@
-<%= form_for @post do |f| %>
+<%= simple_form_for @post, html: {class: "form-horizontal"} do |f| %>
 
-	<div><%= f.label :title %><br />
-	  <%= f.text_field :title %></div>
-	<div><%= f.label :price %><br />
-	  <%= f.text_field :price %></div>
-	<div><%= f.label :location %><br />
-	  <%= f.text_field :location %></div>
-	<div><%= f.label :content %><br />
-	  <%= f.text_field :content %></div>
+  <%= f.input :user_id, input_html: {value: current_user.id}, as: :hidden %>
+	<%= f.input :title %>
+  <%= f.input :price %>
+  <%= f.input :location %>
+  <%= f.input :content %>
+	
 
-	<div><%= f.submit %></div>
+	<div class="form-actions">
+    <%= f.button :submit %>
+  </div>
 
 <% end %>
